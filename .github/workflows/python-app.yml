@@ -14,7 +14,6 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -26,9 +25,11 @@ jobs:
       - name: Install dependencies
         run: |
           make install
-          python -m pip install --upgrade pip
+          python3 -m pip install --upgrade pip
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: List directory contents
+        run: ls -R
       - name: Run the application
         run: |
           make run &
