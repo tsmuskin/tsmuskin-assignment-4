@@ -13,14 +13,14 @@ all: install
 
 # Create a virtual environment and install dependencies
 install:
-	python3 -m venv $(VENV_DIR)
-	$(PIP) install -r $(REQUIREMENTS)
+    python3 -m venv $(VENV_DIR)
+    $(PIP) install -r $(REQUIREMENTS)
 
 # Run the application
 run:
-	$(PYTHON) -m flask run --host=0.0.0.0 --port=3000
+    $(PYTHON) -m flask run --host=0.0.0.0 --port=3000
 
 # Clean up the virtual environment
 clean:
-	rm -rf $(VENV_DIR)
+    rm -rf $(VENV_DIR)
 (VENV)/bin/activate && FLASK_APP=$(APP_NAME) flask run --host=0.0.0.0 --port=$(PORT)
